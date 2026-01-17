@@ -60,29 +60,34 @@ const Loginp = () => {
           timer: 2000,
           showConfirmButton: false,
         });
+<<<<<<< HEAD
+=======
 
-
+>>>>>>> origin/main
         // Dispatch with full userdata including userid
         dispatch(Login({
           email: result.userdata.email,
           userid: result.userdata.userid,
-
+<<<<<<< HEAD
           firstname: result.userdata.firstname,
-          usertype: result.userdata.usertype,
-
+          usertype: result.userdata.usertype
+=======
             firstname: result.userdata.firstname,
   usertype: result.usertype    
          
-
+        
+>>>>>>> origin/main
         }));
 
         // Save sessionStorage for persistence
         sessionStorage.setItem("userinfo", JSON.stringify(result.userdata));
         sessionStorage.setItem("token", result.authtoken);
 
+<<<<<<< HEAD
         setUsertype(result.userdata.usertype);
-
+=======
         setUsertype(result.usertype);
+>>>>>>> origin/main
 
         // Clear password for security (optional)
         setPwd('');
@@ -90,9 +95,11 @@ const Loginp = () => {
         // Redirect after login
         if (id) {
           navigate(`/productdetails?id=${id}`);
-
-        } else if (result.userdata.usertype === "Admin") {        } else if (result.usertype === "Admin") {
-
+<<<<<<< HEAD
+        } else if (result.userdata.usertype === "Admin") {
+=======
+        } else if (result.usertype === "Admin") {
+>>>>>>> origin/main
           navigate("/home");
         } else {
           navigate("/");
