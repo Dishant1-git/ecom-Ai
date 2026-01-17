@@ -15,28 +15,16 @@ const userslice = createSlice({
   reducers: {
     Login: (state, action) => {
       state.Loggedin = true;
-<<<<<<< HEAD
       state.firstname = action.payload.firstname;
       state.username = action.payload.username;
       state.usertype = action.payload.usertype;
-=======
-      state.firstname = action.payload.fname;
-      state.username = action.payload.username;
-      state.usertype = action.payload.utype;
->>>>>>> origin/main
       state.userid = action.payload.userid;
 
       // Persist to sessionStorage
       sessionStorage.setItem("Loggedin", "true");
-<<<<<<< HEAD
       sessionStorage.setItem("firstname", action.payload.firstname);
       sessionStorage.setItem("username", action.payload.username);
       sessionStorage.setItem("usertype", action.payload.usertype);
-=======
-      sessionStorage.setItem("firstname", action.payload.fname);
-      sessionStorage.setItem("username", action.payload.username);
-      sessionStorage.setItem("usertype", action.payload.utype);
->>>>>>> origin/main
       sessionStorage.setItem("userid", action.payload.userid);
     },
 
