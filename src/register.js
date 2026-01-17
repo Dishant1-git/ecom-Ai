@@ -7,14 +7,21 @@ const Register = () => {
     const [lname, setlname] = useState('')
     const [email, setemail] = useState('')
     const [pwd, setpwd] = useState('')
+<<<<<<< HEAD
     const [mobile, setmobile] = useState('')
     const [area, setarea] = useState('')
     const [code, setcode] = useState('')
+=======
+>>>>>>> origin/main
     const navigate = useNavigate()
 
     const validateInputs = () => {
         // Check if any field is empty
+<<<<<<< HEAD
         if (!fname || !lname || !email || !pwd || !mobile || !area || !code) {
+=======
+        if (!fname || !lname || !email || !pwd) {
+>>>>>>> origin/main
             Swal.fire({
                 icon: 'error',
                 title: 'Missing Information',
@@ -46,6 +53,7 @@ const Register = () => {
             })
             return false
         }
+<<<<<<< HEAD
         // Validate 10-digit code
         if (mobile.length !== 10 || !/^\d{10}$/.test(mobile)) {
             Swal.fire({
@@ -61,13 +69,23 @@ const Register = () => {
 
 
 
+=======
+
+        return true
+    }
+
+>>>>>>> origin/main
     const submit = async () => {
         // Validate inputs before submission
         if (!validateInputs()) {
             return
         }
 
+<<<<<<< HEAD
         const data = { fname, lname, email, pwd, mobile,area,pincode:code }
+=======
+        const data = { fname, lname, email, pwd }
+>>>>>>> origin/main
         try {
             const res = await fetch("http://localhost:9000/api/register", {
                 method: "post",
@@ -76,7 +94,11 @@ const Register = () => {
                     'Content-type': 'application/json;charset=utf-8',
                 },
             })
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> origin/main
             if (res.ok) {
                 const result = await res.json()
                 if (result.statuscode === 1) {
@@ -87,7 +109,11 @@ const Register = () => {
                         timer: 2000,
                         showConfirmButton: false
                     })
+<<<<<<< HEAD
                     navigate("/login", { state: { fname } })
+=======
+                    navigate("/login" ,{state:{fname}})
+>>>>>>> origin/main
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -140,12 +166,21 @@ const Register = () => {
                                 <div className="col-md-6">
                                     <div className="form-box">
                                         <label htmlFor="fname" className="form-label">First Name</label>
+<<<<<<< HEAD
                                         <input
                                             type="text"
                                             className="form-control"
                                             id="fname"
                                             placeholder="First Name"
                                             required
+=======
+                                        <input 
+                                            type="text" 
+                                            className="form-control" 
+                                            id="fname" 
+                                            placeholder="First Name" 
+                                            required 
+>>>>>>> origin/main
                                             value={fname}
                                             onChange={(e) => setfname(e.target.value)}
                                         />
@@ -154,12 +189,21 @@ const Register = () => {
                                 <div className="col-md-6">
                                     <div className="form-box">
                                         <label htmlFor="lname" className="form-label">Last Name</label>
+<<<<<<< HEAD
                                         <input
                                             type="text"
                                             className="form-control"
                                             id="lname"
                                             placeholder="Last Name"
                                             required
+=======
+                                        <input 
+                                            type="text" 
+                                            className="form-control" 
+                                            id="lname" 
+                                            placeholder="Last Name"
+                                            required 
+>>>>>>> origin/main
                                             value={lname}
                                             onChange={(e) => setlname(e.target.value)}
                                         />
@@ -170,12 +214,21 @@ const Register = () => {
                                 <div className="col-md-6">
                                     <div className="form-box">
                                         <label htmlFor="email" className="form-label">Email</label>
+<<<<<<< HEAD
                                         <input
                                             type="email"
                                             className="form-control"
                                             id="email"
                                             placeholder="Email"
                                             required
+=======
+                                        <input 
+                                            type="email" 
+                                            className="form-control" 
+                                            id="email" 
+                                            placeholder="Email" 
+                                            required 
+>>>>>>> origin/main
                                             value={email}
                                             onChange={(e) => setemail(e.target.value)}
                                         />
@@ -184,12 +237,21 @@ const Register = () => {
                                 <div className="col-md-6">
                                     <div className="form-box">
                                         <label htmlFor="password" className="form-label">Password</label>
+<<<<<<< HEAD
                                         <input
                                             type="password"
                                             className="form-control mb-0"
                                             id="password"
                                             placeholder="Enter your password"
                                             required
+=======
+                                        <input 
+                                            type="password" 
+                                            className="form-control" 
+                                            id="password"
+                                            placeholder="Enter your password" 
+                                            required 
+>>>>>>> origin/main
                                             value={pwd}
                                             onChange={(e) => setpwd(e.target.value)}
                                         />
@@ -198,6 +260,7 @@ const Register = () => {
                                         </small>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                             </div>
                               <div className="row">
                                 <div className="col-md-6">
@@ -245,6 +308,11 @@ const Register = () => {
                                 <div className="col-12">
                                     <button onClick={submit}
                                         className="btn btn-solid w-auto">Create Account</button>
+=======
+                                <div className="col-12">
+                                    <button onClick={submit}
+                                    className="btn btn-solid w-auto">Create Account</button> 
+>>>>>>> origin/main
                                 </div>
                             </div>
                         </div>
