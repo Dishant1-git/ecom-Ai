@@ -2,59 +2,59 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Initialize state from sessionStorage
 const initialState = {
-  Loggedin: sessionStorage.getItem("Loggedin") === "true",
-  username: sessionStorage.getItem("username") || "Guest",
-  usertype: sessionStorage.getItem("usertype") || "",
-  firstname: sessionStorage.getItem("firstname") || "",
-  userid: sessionStorage.getItem("userid") || "",
+      Loggedin: sessionStorage.getItem("Loggedin") === "true",
+      username: sessionStorage.getItem("username") || "Guest",
+      usertype: sessionStorage.getItem("usertype") || "",
+      firstname: sessionStorage.getItem("firstname") || "",
+      userid: sessionStorage.getItem("userid") || "",
 };
 
 const userslice = createSlice({
-  name: "userslice",
-  initialState,
-  reducers: {
-    Login: (state, action) => {
-      state.Loggedin = true;
-<<<<<<< HEAD
-      state.firstname = action.payload.firstname;
-      state.username = action.payload.username;
-      state.usertype = action.payload.usertype;
-=======
-      state.firstname = action.payload.fname;
-      state.username = action.payload.username;
-      state.usertype = action.payload.utype;
->>>>>>> origin/main
-      state.userid = action.payload.userid;
+      name: "userslice",
+      initialState,
+      reducers: {
+            Login: (state, action) => {
+                  state.Loggedin = true;
 
-      // Persist to sessionStorage
-      sessionStorage.setItem("Loggedin", "true");
-<<<<<<< HEAD
-      sessionStorage.setItem("firstname", action.payload.firstname);
-      sessionStorage.setItem("username", action.payload.username);
-      sessionStorage.setItem("usertype", action.payload.usertype);
-=======
-      sessionStorage.setItem("firstname", action.payload.fname);
-      sessionStorage.setItem("username", action.payload.username);
-      sessionStorage.setItem("usertype", action.payload.utype);
->>>>>>> origin/main
-      sessionStorage.setItem("userid", action.payload.userid);
-    },
+                  state.firstname = action.payload.firstname;
+                  state.username = action.payload.username;
+                  state.usertype = action.payload.usertype;
 
-    Logout: (state) => {
-      state.Loggedin = false;
-      state.firstname = "";
-      state.username = "Guest";
-      state.usertype = "";
-      state.userid = "";
+                  state.firstname = action.payload.fname;
+                  state.username = action.payload.username;
+                  state.usertype = action.payload.utype;
 
-      // Clear sessionStorage
-      sessionStorage.removeItem("Loggedin");
-      sessionStorage.removeItem("firstname");
-      sessionStorage.removeItem("username");
-      sessionStorage.removeItem("usertype");
-      sessionStorage.removeItem("userid");
-    },
-  },
+                  state.userid = action.payload.userid;
+
+                  // Persist to sessionStorage
+                  sessionStorage.setItem("Loggedin", "true");
+
+                  sessionStorage.setItem("firstname", action.payload.firstname);
+                  sessionStorage.setItem("username", action.payload.username);
+                  sessionStorage.setItem("usertype", action.payload.usertype);
+
+                  sessionStorage.setItem("firstname", action.payload.fname);
+                  sessionStorage.setItem("username", action.payload.username);
+                  sessionStorage.setItem("usertype", action.payload.utype);
+
+                  sessionStorage.setItem("userid", action.payload.userid);
+            },
+
+            Logout: (state) => {
+                  state.Loggedin = false;
+                  state.firstname = "";
+                  state.username = "Guest";
+                  state.usertype = "";
+                  state.userid = "";
+
+                  // Clear sessionStorage
+                  sessionStorage.removeItem("Loggedin");
+                  sessionStorage.removeItem("firstname");
+                  sessionStorage.removeItem("username");
+                  sessionStorage.removeItem("usertype");
+                  sessionStorage.removeItem("userid");
+            },
+      },
 });
 
 export const { Login, Logout } = userslice.actions;
