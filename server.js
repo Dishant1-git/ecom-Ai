@@ -609,7 +609,7 @@ app.get("/api/useraddress/:id", async (req, res) => {
 app.delete('/api/clearcart/:userid', async (req, res) => {
   const { userid } = req.params;
   try {
-    await Cart.deleteMany({ userid }); // assuming your cart items have a 'userid' field
+    await datamodel4.deleteMany({ userid }); 
     res.json({ status: 'success' });
   } catch (error) {
     console.error('Error clearing cart:', error);
